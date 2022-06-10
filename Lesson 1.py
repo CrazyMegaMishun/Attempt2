@@ -1,5 +1,5 @@
 from art import *
-tprint("Misha", font="caligraphy")
+tprint("Misha", font="calligraphy")
 
 x = int(input('x = '))
 y = int(input('y = '))
