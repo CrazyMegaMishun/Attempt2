@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9034160-8a73-4b90-8c27-6eb6217b716d" name="Changes" comment="Commit: Ready Lesson 1 home task">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c9034160-8a73-4b90-8c27-6eb6217b716d" name="Changes" comment="Commit: Refactored Lesson 1 home task" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,7 +108,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Lesson_3_branch" />
+                        <option value="Lesson_1_branch" />
                       </list>
                     </value>
                   </entry>
