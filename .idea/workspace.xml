@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9034160-8a73-4b90-8c27-6eb6217b716d" name="Changes" comment="Half ready Lesson 2 home task" />
+    <list default="true" id="c9034160-8a73-4b90-8c27-6eb6217b716d" name="Changes" comment="refactored lesson 1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson 1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lesson 1.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -85,7 +88,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654791115987</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="refactored lesson 1">
+      <created>1654882144573</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1654882144573</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -113,6 +123,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit: Ready Lesson 1 home task" />
-    <option name="LAST_COMMIT_MESSAGE" value="Commit: Ready Lesson 1 home task" />
+    <MESSAGE value="refactored lesson 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored lesson 1" />
   </component>
 </project>
