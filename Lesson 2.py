@@ -32,19 +32,11 @@ else:
 #Завдання 6
 cortege_input = int(float(input()))
 a = tuple(range(10, 101, 10))
-if int(cortege_input) < 0:
-    cortege_input = cortege_input * -1
-    if cortege_input in a:
-        print('True')
-    else:
-        print(False)
-elif int(cortege_input) > 0:
-    if cortege_input in a:
-        print(True)
-    else:
-        print(False)
-else:
-    print(False)
+if cortege_input < 0:
+    cortege_input = cortege_input*(-1)
+    print(cortege_input in a)
+elif cortege_input >= 0:
+    print(cortege_input in a)
 
 #Завдання 7
 print('Input number of stars: ')
