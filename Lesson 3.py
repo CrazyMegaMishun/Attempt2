@@ -1,8 +1,8 @@
-"""#Завдання 1
+#Завдання 1
 print(sum(map(int, list(input()))))
 
 #Завдання 2
-x = str(float(input()))
+x = input()
 print(x[x.find('.')+1:])
 print((x[x.find('.')+1:])[0])
 
@@ -33,10 +33,17 @@ horizontal = 'ABCDEFGH'
 cell_1 = input('Please write down first cell:')
 cell_2 = input('Please write down second cell:')
 
-if horizontal.find(cell_1[0]) - horizontal.find(cell_2[0]) == 1 or horizontal.find(cell_1[0]) - horizontal.find(cell_2[0]) == -1:
-    if int((cell_1[1])) - int(cell_2[1]) == 2 or int(cell_1[1]) - int(cell_2[1]) == -2:
-        print(True)
-    else:
-        print(False)
-"""
+if (horizontal.find(cell_1[0]) - horizontal.find(cell_2[0]) == 1 or horizontal.find(cell_1[0]) - horizontal.find(cell_2[0]) == -1)\
+        and int((cell_1[1])) - int(cell_2[1]) == 2 or int(cell_1[1]) - int(cell_2[1]) == -2:
+    print(True)
+else:
+    print(False)
+
+
 #Завдання 7
+n = int(input())
+to_fac = 1
+
+for i in range(2, n + 1):
+    to_fac *= i
+print(to_fac)
