@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9034160-8a73-4b90-8c27-6eb6217b716d" name="Changes" comment="refactored lesson 1">
+    <list default="true" id="c9034160-8a73-4b90-8c27-6eb6217b716d" name="Changes" comment="lesson3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lesson 1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lesson 1.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +108,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/Lesson_3_branch" />
+                        <option value="Lesson_2_branch" />
                       </list>
                     </value>
                   </entry>
