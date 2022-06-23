@@ -1,10 +1,19 @@
 #Завдання 1
 print(sum(map(int, list(input()))))
 
+x = int(input())
+y = list()
+while x > 0:
+    y.append(x % 10)
+    x = (x - (x % 10))//10
+print(sum(y))
+
 #Завдання 2
 x = input()
 print(x[x.find('.')+1:])
 print((x[x.find('.')+1:])[0])
+
+print(str(int(x.split(sep='.')[1])) + ', ' + str(int(x.split(sep='.')[1])//10))
 
 #Завдання 3
 list_ten = [10, 20, 30, 40, 50]
