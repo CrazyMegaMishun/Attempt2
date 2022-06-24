@@ -34,14 +34,14 @@ def search_common(): #общие для двух
     pass
 
 
-def unique_first(): #есть в первом, но нет во втором
+def get_unique_first(): #есть в первом, но нет во втором
     pass
 
 
-def unique_both(): #уникальные для обоих
+def get_unique_both(): #уникальные для обоих
     pass
 
 
 print(search_common())
-print(unique_first())
-print(unique_both())
+print(get_unique_first())
+print(get_unique_both())
