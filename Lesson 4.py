@@ -1,5 +1,44 @@
+#Завдання 2
+
+
+
+"""
+#Завдання 3
+a = int(input())
+b = int(input())
+
+
+def a_to_b(x, y):
+    s = str()
+    if x < y:
+        for i in range(x, y+1):
+            s += str(i)
+    else:
+        for i in range(y, x+1)[::-1]:
+            s += str(i)
+
+    print(s)
+
+
+a_to_b(a, b)
+
+
+#Завдання 4
+x = int(input('Input n<=9: '))
+
+
+def stairs(x):
+    b = str()
+    for i in range(1, x+1):
+        b += str(i)
+        print(b)
+
+    return b
+
+
+stairs(x)
+
 #Завдання 5
-#Попробовать написать всё через лямбда функции
 ryadok = list(input())
 
 
@@ -30,7 +69,9 @@ def get_even_index_symbols(x): #e
 
 def get_odd_index_symbols(x): #f
     b = list()
-
+    for index, values in enumerate(x):
+        if index % 2 != 0:
+            b.append(x[index])
     return b
 
 
@@ -40,9 +81,7 @@ def get_reverced_symbols(x): #g
 
 
 def get_all_symbols_reverced_step_1(x): #h
-    b = list(x.reverse())
-
-    return b
+    return list(reversed(get_even_index_symbols(x)))
 
 
 print('Третий символ: ' + str(get_third_symbol(ryadok)))
@@ -56,7 +95,7 @@ print('Символы в обратном порядке через один: ' 
 print('Длинна строки: ' + str(len(ryadok)))
 
 
-"""# Завдання 6
+# Завдання 6
 x = int(input())
 
 
@@ -122,4 +161,5 @@ def get_list_of_uniques_for_both(x, y):  # уникальные для обои�
 print(get_list_of_commons(list_maker(list_1), list_maker(list_2)))
 print(get_list_of_uniques_in_list_1(list_maker(list_1), list_maker(list_2)))
 print(get_list_of_uniques_for_both(list_maker(list_1), list_maker(list_2)))
+
 """
