@@ -1,3 +1,21 @@
+#Завдання 1
+x = int(input())
+y = int(input())
+
+def sportecus(x, y):
+    day = 0
+
+    while x < y:
+        x += 0.1*x
+        day += 1
+        print(x)
+
+    return day
+
+
+print(sportecus(x, y))
+
+
 #Завдання 2
 our_number = int(input('Введите целое неотрицательное число с нулём в конце: '))
 
@@ -10,6 +28,7 @@ def list_maker(x):
         x = (x - (x % 10)) // 10
 
     map(int, y)
+    y.reverse()
 
     return y
 
@@ -46,27 +65,60 @@ def get_average(x):
 
 
 def get_highest(x):
-    y = list()
-
     b = list_maker(x)
     b.sort()
     max_int = b[len(b)-1]
 
-    for index, values in enumerate(list_maker(x)):
-        y.append(index, values)
-
-    return max_int
+    return max_int, list_maker(x//10).index(max_int)+1
 
 
+def get_even_and_odd_amount(x):
+    even = 0
+    odd = 0
 
-print(get_numbers_amount(our_number))
-print(get_all_sum(our_number))
-print(get_multiply(our_number))
-print(get_average(our_number))
-print(get_highest(our_number))
+    for i in list_maker(x//10):
+        if i % 2 == 0:
+            even += 1
+        else:
+            odd += 1
+
+    return even, odd
 
 
-"""
+def get_second_max_int(x):
+    y = list_maker(x//10)
+    y.sort()
+    max_int = get_highest(our_number)[0]
+
+    while max_int in y:
+        y.remove(max_int)
+
+    y.reverse()
+
+    return y[0]
+
+
+def get_number_of_highest(x):
+    max_int = get_highest(our_number)[0]
+    b = 0
+
+    for i in list_maker(x//10):
+        if i == max_int:
+            b += 1
+
+    return b
+
+
+print('Количество цифр: ' + str(get_numbers_amount(our_number)))
+print('Сумма всех цифр: ' + str(get_all_sum(our_number)))
+print('Умножение всех цифр: ' + str(get_multiply(our_number)))
+print('Среднее арифметическое: ' + str(get_average(our_number)))
+print('Самое большое и его положение: ' + str(get_highest(our_number)))
+print('Количество чётных и не чётных: ' + str(get_even_and_odd_amount(our_number)))
+print('Второе самое больше число: ' + str(get_second_max_int(our_number)))
+print('Количество самых больших чисел: ' + str(get_number_of_highest(our_number)))
+
+
 #Завдання 3
 a = int(input())
 b = int(input())
@@ -225,5 +277,3 @@ def get_list_of_uniques_for_both(our_number, y):  # уникальные для 
 print(get_list_of_commons(list_maker(list_1), list_maker(list_2)))
 print(get_list_of_uniques_in_list_1(list_maker(list_1), list_maker(list_2)))
 print(get_list_of_uniques_for_both(list_maker(list_1), list_maker(list_2)))
-
-"""
