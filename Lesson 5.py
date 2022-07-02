@@ -102,7 +102,6 @@ print(square(int(input())))
 
 
 #Завдання 6
-
 a = {'first_color': 'Red', 'second_color': 'Green', 'third_color': None}
 
 
