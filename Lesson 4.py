@@ -6,7 +6,7 @@ def sportecus(x, y):
     day = 0
 
     while x < y:
-        x += 0.1*x
+        x *= 1.1
         day += 1
         print(x)
 
@@ -16,97 +16,74 @@ def sportecus(x, y):
 print(sportecus(x, y))
 
 
-#Завдання 2
-our_number = int(input('Введите целое неотрицательное число с нулём в конце: '))
+# Завдання 2
+def get_our_number():
+    number = []
+    while True:
+        number_to_input = input()
+        if int(number_to_input) != 0:
+            number.append(int(number_to_input))
+        else:
+            break
+
+    return number  # выходит список
 
 
-def list_maker(x):
-    y = list()
-    b = 0
-    while x > 0:
-        y.append(x % 10)
-        x = (x - (x % 10)) // 10
-
-    map(int, y)
-    y.reverse()
-
-    return y
+our_number = get_our_number()
 
 
 def get_numbers_amount(x):
     y = 0
-    for index, values in enumerate(list_maker(x)):
+    for i in x:
         y += 1
+    return y
 
-    return y - 1
 
 def get_all_sum(x):
-    y = 0
-    for index, values in enumerate(list_maker(x)):
-        y += values
-
-    return y
+    return sum(x)
 
 
 def get_multiply(x):
     y = 1
-
-    b = list(enumerate(list_maker(x)))
-    del b[len(str(x))-1]
-
-    for index, values in b:
-        y *= values
-
+    for i in x:
+        y *= i
     return y
 
 
 def get_average(x):
-    return get_all_sum(x) / get_numbers_amount(x)
+    return get_all_sum(x)/get_numbers_amount(x)
 
 
 def get_highest(x):
-    b = list_maker(x)
-    b.sort()
-    max_int = b[len(b)-1]
-
-    return max_int, list_maker(x//10).index(max_int)+1
+    max_int = max(x)
+    max_index = x.index(max_int)
+    return max_int, max_index+1
 
 
 def get_even_and_odd_amount(x):
     even = 0
     odd = 0
 
-    for i in list_maker(x//10):
+    for i in x:
         if i % 2 == 0:
             even += 1
         else:
             odd += 1
-
     return even, odd
 
 
 def get_second_max_int(x):
-    y = list_maker(x//10)
-    y.sort()
-    max_int = get_highest(our_number)[0]
-
-    while max_int in y:
-        y.remove(max_int)
-
-    y.reverse()
-
-    return y[0]
+    y = x
+    y.remove(max(x))
+    return max(y)
 
 
-def get_number_of_highest(x):
-    max_int = get_highest(our_number)[0]
-    b = 0
-
-    for i in list_maker(x//10):
-        if i == max_int:
-            b += 1
-
-    return b
+def get_amount_of_highest(x):
+    y = 0
+    for i in x:
+        if i == max(x):
+            y += 1
+    return y
 
 
 print('Количество цифр: ' + str(get_numbers_amount(our_number)))
@@ -116,21 +93,20 @@ print('Среднее арифметическое: ' + str(get_average(our_numb
 print('Самое большое и его положение: ' + str(get_highest(our_number)))
 print('Количество чётных и не чётных: ' + str(get_even_and_odd_amount(our_number)))
 print('Второе самое больше число: ' + str(get_second_max_int(our_number)))
-print('Количество самых больших чисел: ' + str(get_number_of_highest(our_number)))
-
+print('Количество самых больших чисел: ' + str(get_amount_of_highest(our_number)))
 
 #Завдання 3
 a = int(input())
 b = int(input())
 
 
-def a_to_b(our_number, y):
+def a_to_b(x, y):
     s = str()
-    if our_number < y:
-        for i in range(our_number, y+1):
+    if x < y:
+        for i in range(x, y + 1):
             s += str(i)
     else:
-        for i in range(y, our_number+1)[::-1]:
+        for i in range(y, x + 1)[::-1]:
             s += str(i)
 
     print(s)
@@ -138,66 +114,66 @@ def a_to_b(our_number, y):
 
 a_to_b(a, b)
 
-
 #Завдання 4
-our_number = int(input('Input n<=9: '))
+x = int(input('Input n<=9: '))
 
 
-def stairs(our_number):
+def stairs(x):
     b = str()
-    for i in range(1, our_number+1):
+    for i in range(1, x+1):
         b += str(i)
         print(b)
 
     return b
 
 
-stairs(our_number)
+stairs(x)
+
 
 #Завдання 5
 ryadok = list(input())
 
 
-def get_third_symbol(our_number): #a
-    return our_number[2]
+def get_third_symbol(x): #a
+    return x[2]
 
 
-def get_second_to_last_symbol(our_number): #b
-    return our_number[len(our_number)-2]
+def get_second_to_last_symbol(x): #b
+    return x[len(x)-2]
 
 
-def get_first_five_symbols(our_number): #c
-    return our_number[0], our_number[1], our_number[2], our_number[3], our_number[4]
+def get_first_five_symbols(x): #c
+    return x[0], x[1], x[2], x[3], x[4]
 
 
-def get_except_two_last_symbols(our_number): #d
+def get_except_two_last_symbols(x): #d
     b = list()
 
-    for i in range(len(our_number)-2):
-        b.append(our_number[i])
+    for i in range(len(x)-2):
+        b.append(x[i])
     return b
 
 
-def get_even_index_symbols(our_number): #e
-    b = list(our_number[::2])
+def get_even_index_symbols(x): #e
+    b = list(x[::2])
     return b
 
 
-def get_odd_index_symbols(our_number): #f
+def get_odd_index_symbols(x): #f
     b = list()
-    for index, values in enumerate(our_number):
+    for index, values in enumerate(x):
         if index % 2 != 0:
-            b.append(our_number[index])
+            b.append(x[index])
     return b
 
 
-def get_reverced_symbols(our_number): #g
-    b = list(our_number[::-1])
+def get_reverced_symbols(x): #g
+    b = list(x[::-1])
     return b
 
 
-def get_all_symbols_reverced_step_1(our_number): #h
-    return list(reversed(get_even_index_symbols(our_number)))
+def get_all_symbols_reverced_step_1(x): #h
+    return list(reversed(get_even_index_symbols(x)))
 
 
 print('Третий символ: ' + str(get_third_symbol(ryadok)))
@@ -212,15 +188,12 @@ print('Длинна строки: ' + str(len(ryadok)))
 
 
 # Завдання 6
-our_number = int(input())
-
-
-def highest_neighbor_number(our_number):
+def highest_neighbor_number(x):
     y = list()
     b = 0
-    while our_number > 0:
-        y.append(our_number % 10)
-        our_number = (our_number - (our_number % 10)) // 10
+    while x > 0:
+        y.append(x % 10)
+        x = (x - (x % 10)) // 10
 
     for i in range(len(y)-1):
         if y[i-1] < y[i] > y[i+1]:
@@ -228,52 +201,30 @@ def highest_neighbor_number(our_number):
     return b
 
 
-print(highest_neighbor_number(our_number))
+highest_neighbor_number(int(input()))
+"""
+
+"""# Завдання 7
+set_1 = set(input('Input one list of integers: '))
+set_2 = set(input('Input second list of integers: '))
 
 
-# Завдання 7
-list_1 = int(input('Input one list of integers: '))
-list_2 = int(input('Input second list of integers: '))
+def get_list_of_commons(x, y):  # общие для двух
+    z = x.intersection(y)
+    return print(z)
 
 
-def list_maker(our_number):
-    y = list()
-    while our_number > 0:
-        y.append(our_number % 10)
-        our_number = (our_number - (our_number % 10)) // 10
-    reversed(y)
-    return y
+def get_list_of_uniques_set_1(x, y):  # есть в первом, но нет во втором
+    z = x.difference(y)
+    return print(z)
 
 
-def get_list_of_commons(our_number, y):  # общие для двух
-    list_of_commons = []
-    for our_number in our_number:
-        if our_number in y:
-            list_of_commons.append(our_number)
-
-    return set(list_of_commons)
+def get_list_of_uniques_for_both(x, y):  # уникальные для обоих
+    z = x.difference(y)
+    z.update(y.difference(x))
+    return print(z)
 
 
-def get_list_of_uniques_in_list_1(our_number, y):  # есть в первом, но нет во втором
-    list_of_uniques_in_list_1 = []
-    for our_number in our_number:
-        if our_number not in y:
-            list_of_uniques_in_list_1.append(our_number)
-
-    return set(list_of_uniques_in_list_1)
-
-
-def get_list_of_uniques_for_both(our_number, y):  # уникальные для обоих
-    list_of_uniques_for_both = list()
-    a = list(our_number + y)
-
-    for i in a:
-        if a.count(i) == 1:
-            list_of_uniques_for_both.append(i)
-
-    return list_of_uniques_for_both
-
-
-print(get_list_of_commons(list_maker(list_1), list_maker(list_2)))
-print(get_list_of_uniques_in_list_1(list_maker(list_1), list_maker(list_2)))
-print(get_list_of_uniques_for_both(list_maker(list_1), list_maker(list_2)))
+get_list_of_commons(set_1, set_2)
+get_list_of_uniques_set_1(set_1, set_2)
+get_list_of_uniques_for_both(set_1, set_2)
