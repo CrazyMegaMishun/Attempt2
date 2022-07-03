@@ -115,6 +115,25 @@ def dict_cleaner(x):
 
 
 dict_cleaner(a)
-"""
+
 
 #Завдання 7
+def is_date(day, month, year):
+    simple_year = {1:31, 2:28, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31}
+    leap_year = {1:31, 2:29, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31}
+    try:
+        if year % 4 == 0 and year % 100 != 0 and year % 400 == 0:
+            if day in range(leap_year[month]):
+                return print(True)
+            else:
+                return print(False)
+        elif day in range(simple_year[month]):
+            return print(True)
+        else:
+            return print(False)
+    except:
+        print(False)
+
+
+is_date(int(input('Введіть число: ')), int(input('Введіть місяць: ')), int(input('Введіть рік: ')))
+"""
