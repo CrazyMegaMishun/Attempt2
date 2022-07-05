@@ -1,4 +1,4 @@
-"""#Завдання 1
+#Завдання 1
 import random
 
 
@@ -136,4 +136,3 @@ def is_date(day, month, year):
 
 
 is_date(int(input('Введіть число: ')), int(input('Введіть місяць: ')), int(input('Введіть рік: ')))
-"""
