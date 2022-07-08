@@ -16,11 +16,16 @@ def is_prime(x):
 
 print(is_prime(random.randint(0, 1000)))
 
+
 #Завдання 2
 def word_symbols_amount():
-    s = input()
+    s = input('Введіть речення: ')
     words = 1
     symbols = 0
+
+    for spec in ",.!?":
+        s = s.replace(spec, ' ')
+
 
     for i in s:
         if i == ' ':
