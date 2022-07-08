@@ -18,8 +18,7 @@ print(is_prime(random.randint(0, 1000)))
 
 
 #Завдання 2
-def word_symbols_amount():
-    s = input('Введіть речення: ')
+def word_symbols_amount(s):
     words = 1
     symbols = 0
 
@@ -38,7 +37,7 @@ def word_symbols_amount():
     return words, symbols
 
 
-print(word_symbols_amount())
+print(word_symbols_amount(input('Введіть речення: ')))
 
 
 #Завдання 3
@@ -46,13 +45,13 @@ import math
 
 a = int(input('Перша сторона: '))
 b = int(input('Друга сторона: '))
-figure_type = int(input('Введіть 1, якщо трикутник і 2, якщо чотирикутник: '))
+figure_type = int(input('Введіть "1", якщо трикутник і "2", якщо чотирикутник: '))
 
 
 def triangle_area(x, y):
     z = round(math.hypot(x, y)) #находим сторону
-    p = (x + y + z)/2
-    s = math.sqrt(p * (p-x) * (p-y) * (p-z))
+    p = (x + y + z)/2 #полупериметр
+    s = math.sqrt(p * (p-x) * (p-y) * (p-z)) #формула герона
     return s
 
 
@@ -71,7 +70,7 @@ print(area_printer(figure_type))
 
 
 #Завдання 4
-a = input()
+a = input('Введіть число: ')
 
 
 def odds_to_zero_count(x):
@@ -102,7 +101,7 @@ def square(x):
     return a
 
 
-print(square(int(input())))
+print(square(int(input('Введіть сторону квадрата: '))))
 
 
 #Завдання 6
