@@ -9,12 +9,12 @@ def is_prime(x):
             p += 1
 
     if p == 2:
-        return print(x, True)
+        return x, True
     else:
-        return print(x, False)
+        return x, False
 
 
-is_prime(random.randint(0, 1000))
+print(is_prime(random.randint(0, 1000)))
 
 #Завдання 2
 def word_symbols_amount():
@@ -30,10 +30,10 @@ def word_symbols_amount():
         if i != ' ':
             symbols += 1
 
-    return print(words, symbols)
+    return words, symbols
 
 
-word_symbols_amount()
+print(word_symbols_amount())
 
 
 #Завдання 3
@@ -57,12 +57,12 @@ def quadrangle_area(x, y):
 
 def area_printer(x):
     if x == 1:
-        return print(triangle_area(a, b))
+        return triangle_area(a, b)
     elif x == 2:
-        return print(quadrangle_area(a, b))
+        return quadrangle_area(a, b)
 
 
-area_printer(figure_type)
+print(area_printer(figure_type))
 
 
 #Завдання 4
@@ -83,18 +83,17 @@ def odds_to_zero_count(x):
         if i == 0:
             z += 1
 
-    return print(z)
+    return z
 
 
-odds_to_zero_count(a)
+print(odds_to_zero_count(a))
 
 
 #Завдання 5
-import math
 
 
 def square(x):
-    a = (x*4, x**2, x*math.sqrt(2))
+    a = (x*4, x**2, x**0.5)
     return a
 
 
@@ -106,33 +105,27 @@ a = {'first_color': 'Red', 'second_color': 'Green', 'third_color': None}
 
 
 def dict_cleaner(x):
-    y = {}
-
-    for key, values in x.items():
-        if values is not None:
-            y.update({key: values})
-    return print(y)
+    x.popitem()
+    return x
 
 
-dict_cleaner(a)
+print(dict_cleaner(a))
 
 
 #Завдання 7
 def is_date(day, month, year):
-    simple_year = {1:31, 2:28, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31}
-    leap_year = {1:31, 2:29, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31}
+    calendar = {1:31, 2:28, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31}
+
+    if year % 4 == 0 and year % 100 != 0:
+        calendar[2] = 29
+
     try:
-        if year % 4 == 0 and year % 100 != 0 and year % 400 == 0:
-            if day in range(leap_year[month]):
-                return print(True)
-            else:
-                return print(False)
-        elif day in range(simple_year[month]):
+        if day in range(calendar[month] + 1):
             return print(True)
         else:
             return print(False)
     except:
-        print(False)
+        return print(False)
 
 
 is_date(int(input('Введіть число: ')), int(input('Введіть місяць: ')), int(input('Введіть рік: ')))
