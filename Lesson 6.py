@@ -16,4 +16,6 @@ print(dict_maker(coin, code))
 """
 
 #Завдання 2
-
+with open('acdc.json', 'r') as f:
+    for elem in f.readlines():
+        print(elem)
