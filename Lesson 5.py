@@ -2,23 +2,23 @@
 import random
 
 
-def is_prime(x):
+def is_prime(x) -> int | str:
     p = 0
     for i in range(1, 1000):
         if x % i == 0:
             p += 1
 
     if p == 2:
-        return x, True
+        return x, 'True'
     else:
-        return x, False
+        return x, 'False'
 
 
 print(is_prime(random.randint(0, 1000)))
 
 
 #Завдання 2
-def word_symbols_amount(s):
+def word_symbols_amount(s) -> int | int:
     words = 1
     symbols = 0
 
@@ -48,18 +48,18 @@ b = int(input('Друга сторона: '))
 figure_type = int(input('Введіть "1", якщо трикутник і "2", якщо чотирикутник: '))
 
 
-def triangle_area(x, y):
+def triangle_area(x, y) -> int:
     z = round(math.hypot(x, y)) #находим сторону
     p = (x + y + z)/2 #полупериметр
     s = math.sqrt(p * (p-x) * (p-y) * (p-z)) #формула герона
     return s
 
 
-def quadrangle_area(x, y):
+def quadrangle_area(x, y) -> int:
     return triangle_area(x, y) * 2
 
 
-def area_printer(x):
+def area_printer(x) -> int:
     if x == 1:
         return triangle_area(a, b)
     elif x == 2:
@@ -73,7 +73,7 @@ print(area_printer(figure_type))
 a = input('Введіть число: ')
 
 
-def odds_to_zero_count(x):
+def odds_to_zero_count(x) -> int:
     y = []
     z = 0
 
@@ -96,7 +96,7 @@ print(odds_to_zero_count(a))
 #Завдання 5
 
 
-def square(x):
+def square(x) -> int:
     a = (x*4, x**2, x**0.5)
     return a
 
@@ -108,16 +108,15 @@ print(square(int(input('Введіть сторону квадрата: '))))
 a = {'first_color': 'Red', 'second_color': 'Green', 'third_color': None}
 
 
-def dict_cleaner(x):
-    x.popitem()
-    return x
+def dict_cleaner(x) -> dict:
+    return {(k, v) for k, v in x.items() if x.get(k) is not None}
 
 
 print(dict_cleaner(a))
 
 
 #Завдання 7
-def is_date(day, month, year):
+def is_date(day, month, year) -> str:
     calendar = {1:31, 2:28, 3:31, 4:30, 5:31, 6:30, 7:31, 8:31, 9:30, 10:31, 11:30, 12:31}
 
     if year % 4 == 0 and year % 100 != 0:
@@ -125,11 +124,11 @@ def is_date(day, month, year):
 
     try:
         if day in range(calendar[month] + 1):
-            return print(True)
+            return print('True')
         else:
-            return print(False)
+            return print('False')
     except:
-        return print(False)
+        return print('False')
 
 
 is_date(int(input('Введіть число: ')), int(input('Введіть місяць: ')), int(input('Введіть рік: ')))
