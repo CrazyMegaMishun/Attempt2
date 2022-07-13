@@ -36,15 +36,13 @@ def site_to_json(j):
         table.add_row(td_data[:columns])
         td_data = td_data[columns:]
 
-
     with open(d+'-'+q+'-'+cnt+'-days-weather-forecast.txt', "w", encoding='utf-8') as file_t:
         file_t.write(str(table))
+
         """file_t.write('Дата Температура вдень Температура вночі' + '\n')
         for i in enumerate(x):
             file_t.write(datetime.datetime.fromtimestamp(i[1]['dt']).strftime("%d-%m-%Y") + ' '
                          + str(i[1]['temp']['day']) + ' ' + str(i[1]['temp']['night']) + '\n')"""
 
 
-
 site_to_json(get_site_by_requests())
-
