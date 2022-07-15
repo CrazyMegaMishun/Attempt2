@@ -1,0 +1,86 @@
+{
+  "motd": {
+    "msg": "If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.",
+    "url": "https://exchangerate.host/#/donate"
+  },
+  "success": true,
+  "query": {
+    "from": "USD",
+    "to": "UAH",
+    "amount": 100
+  },
+  "info": {
+    "rate": 8.014171
+  },
+  "historical": true,
+  "date": "2012-05-24",
+  "result": 801.417085
+}{
+  "motd": {
+    "msg": "If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.",
+    "url": "https://exchangerate.host/#/donate"
+  },
+  "success": true,
+  "query": {
+    "from": "USD",
+    "to": "UAH",
+    "amount": 100
+  },
+  "info": {
+    "rate": 8.016818
+  },
+  "historical": true,
+  "date": "2012-05-23",
+  "result": 801.6818
+}{
+  "motd": {
+    "msg": "If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.",
+    "url": "https://exchangerate.host/#/donate"
+  },
+  "success": true,
+  "query": {
+    "from": "USD",
+    "to": "UAH",
+    "amount": 100
+  },
+  "info": {
+    "rate": 7.918664
+  },
+  "historical": true,
+  "date": "2012-05-22",
+  "result": 791.866365
+}{
+  "motd": {
+    "msg": "If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.",
+    "url": "https://exchangerate.host/#/donate"
+  },
+  "success": true,
+  "query": {
+    "from": "USD",
+    "to": "UAH",
+    "amount": 100
+  },
+  "info": {
+    "rate": 7.890864
+  },
+  "historical": true,
+  "date": "2012-05-21",
+  "result": 789.086354
+}{
+  "motd": {
+    "msg": "If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.",
+    "url": "https://exchangerate.host/#/donate"
+  },
+  "success": true,
+  "query": {
+    "from": "USD",
+    "to": "UAH",
+    "amount": 100
+  },
+  "info": {
+    "rate": 7.939676
+  },
+  "historical": true,
+  "date": "2012-05-20",
+  "result": 793.967554
+}
