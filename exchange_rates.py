@@ -44,23 +44,30 @@ def get_site_by_requests(i):
 
 
 def json_to_txt():
-    x = [['date', 'from', 'to', 'amount', 'rate', 'result']]
+    x = list()
     y = list()
 
     with open('exchange_rates.json', 'r') as f:
         for i in json.load(f).items():
             y.append(i)
 
-        for i in enumerate(y):
-            x.append([y[5]['date'], y[2]['query']['from'], y[2]['query']['to'], y[2]['query']['amount']])
+        x.append([y[5][1],
+                  y[2][1]['from'],
+                  y[2][1]['to'],
+                  y[2][1]['amount'],
+                  y[3][1]['rate'],
+                  y[6][1]])
 
+    return x
 
-    #with open('exchange_rates.txt', 'w') as f:
 
 def exchange_rate_writer():
+    y = [['date', 'from', 'to', 'amount', 'rate', 'result']]
     for i in range(5):
         get_site_by_requests(i)
-        json_to_txt()
+        y.append(json_to_txt())
+
+    print(len(y))
 
 
 exchange_rate_writer()
