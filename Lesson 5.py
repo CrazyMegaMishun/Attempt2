@@ -109,7 +109,7 @@ a = {'first_color': 'Red', 'second_color': 'Green', 'third_color': None}
 
 
 def dict_cleaner(x) -> dict:
-    return {(k, v) for k, v in x.items() if x.get(k) is not None}
+    return {(k, v) for k, v in x.items() if v is not None}
 
 
 print(dict_cleaner(a))
@@ -124,11 +124,11 @@ def is_date(day, month, year) -> str:
 
     try:
         if day in range(calendar[month] + 1):
-            return print('True')
+            return True
         else:
-            return print('False')
+            return False
     except:
-        return print('False')
+        return False
 
 
-is_date(int(input('Введіть число: ')), int(input('Введіть місяць: ')), int(input('Введіть рік: ')))
+print(is_date(int(input('Введіть число: ')), int(input('Введіть місяць: ')), int(input('Введіть рік: '))))
