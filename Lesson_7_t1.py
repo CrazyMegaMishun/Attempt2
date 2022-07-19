@@ -1,2 +1,2 @@
 #Завдання 1
-print(len(set(input('Введіть перше число: '))), len(set(input('Введіть друге число: '))))
+print(set(input('Введіть перше число: ')).intersection(set(input('Введіть друге число: '))))
