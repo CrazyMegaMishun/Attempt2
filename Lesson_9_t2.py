@@ -8,8 +8,10 @@ args = parser.parse_args()
 
 def hide_email(e) -> str:
     x = e.split(sep='@')
-    print(x[0][len(x[0]) - 2])
-    '''x[0].replace(x[len(x[0])-2], '*')'''
+    for i in range(len(x[0])-2):
+        x[0] = x[0].replace(x[0][i], '*')
+
+    return '{}@{}'.format(x[0], x[1])
 
 
-hide_email(args.email)
+print(hide_email(args.email))
