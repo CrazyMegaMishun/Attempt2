@@ -26,19 +26,19 @@ def get_site_by_requests(args) -> dict:
 
 def table_maker(j):
     data = j["list"]
-    th = ['Дата', 'Температура вдень', 'Температура вночі']
-    td = []
-    columns = len(th)
-    table = PrettyTable(th)
+    table_headers = ['Дата', 'Температура вдень', 'Температура вночі']
+    table_data = []
+    columns = len(table_headers)
+    table = PrettyTable(table_headers)
 
     for i in enumerate(data):
-        td.append(datetime.datetime.fromtimestamp(i[1]['dt']).strftime("%d-%m-%Y"))
-        td.append(str(round(i[1]['temp']['day'], 1)) + ' °С')
-        td.append(str(round(i[1]['temp']['night'], 1)) + ' °С')
+        table_data.append(datetime.datetime.fromtimestamp(i[1]['dt']).strftime("%d-%m-%Y"))
+        table_data.append(str(round(i[1]['temp']['day'], 1)) + ' °С')
+        table_data.append(str(round(i[1]['temp']['night'], 1)) + ' °С')
 
-    while td:
-        table.add_row(td[:columns])
-        td = td[columns:]
+    while table_data:
+        table.add_row(table_data[:columns])
+        table_data = table_data[columns:]
 
     return table
 
