@@ -1,4 +1,4 @@
-def longest_word():
+def longest_word() -> str:
     return max(list(input().split(sep=' ')), key=len)
 
 
