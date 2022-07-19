@@ -5,16 +5,6 @@ import requests
 from tabulate import tabulate
 
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Онлайн конвертер валют')
-    parser.add_argument('cf', type=str, default='USD', help='Що конвертуємо')
-    parser.add_argument('ct', type=str, default='UAH', help='В яку валюту конвертуємо')
-    parser.add_argument('a', type=float, default=100.00, help='Кількість')
-    parser.add_argument('-sd', '--start_date', type=str, default=str(date.today()), help='Дата (рік-місяць-день)')
-    parser.add_argument('-save', '--save_to_file', type=str, help='Зберігаємо у файл (Y/N)?')
-    args, unknown = parser.parse_known_args()
-
-
 def date_check(d) -> str:
     try:
         if datetime.strptime(d, "%Y-%m-%d") - timedelta(days=1) >= datetime.today():
@@ -76,4 +66,12 @@ def exchange_rate_writer():
             f.write(table)
 
 
-exchange_rate_writer()
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description='Онлайн конвертер валют')
+    parser.add_argument('cf', type=str, default='USD', help='Що конвертуємо')
+    parser.add_argument('ct', type=str, default='UAH', help='В яку валюту конвертуємо')
+    parser.add_argument('a', type=float, default=100.00, help='Кількість')
+    parser.add_argument('-sd', '--start_date', type=str, default=str(date.today()), help='Дата (рік-місяць-день)')
+    parser.add_argument('-save', '--save_to_file', type=str, help='Зберігаємо у файл (Y/N)?')
+    args, unknown = parser.parse_known_args()
+    exchange_rate_writer()
